@@ -1,4 +1,225 @@
-// Questions Databaseconst questions = {    reasoning: [        {            question: "If all roses are flowers and some flowers fade quickly, can we conclude that some roses fade quickly?",            options: ["Yes, definitely", "No, cannot conclude", "Only in summer", "Sometimes"],            correct: 1        },        {            question: "Find the odd one out: Dog, Cat, Lion, Table",            options: ["Dog", "Cat", "Lion", "Table"],            correct: 3        },        {            question: "Complete the series: 2, 4, 8, 16, ?",            options: ["20", "24", "32", "64"],            correct: 2        },        {            question: "If A is taller than B, and B is taller than C, then:",            options: ["C is tallest", "A is shortest", "A is taller than C", "Cannot determine"],            correct: 2        },        {            question: "Which word does not belong: Apple, Banana, Carrot, Orange",            options: ["Apple", "Banana", "Carrot", "Orange"],            correct: 2        },        {            question: "If TODAY is coded as UPCBZ, how is WORLD coded?",            options: ["XPSME", "XPSNF", "YQTME", "XQSME"],            correct: 0        },        {            question: "Find the next number: 1, 1, 2, 3, 5, 8, ?",            options: ["11", "12", "13", "14"],            correct: 2        },        {            question: "All birds have wings. Sparrow is a bird. Therefore:",            options: ["Sparrow cannot fly", "Sparrow has wings", "Wings have sparrows", "Birds are sparrows"],            correct: 1        },        {            question: "Which is different: Square, Rectangle, Circle, Triangle",            options: ["Square", "Rectangle", "Circle", "Triangle"],            correct: 2        },        {            question: "Complete: ACE, BDF, CEG, ?",            options: ["DFH", "DEF", "EFG", "DGH"],            correct: 0        },        {            question: "If 5 is to 25, then 7 is to:",            options: ["35", "42", "49", "56"],            correct: 2        },        {            question: "Find the odd one: 3, 9, 15, 21, 26",            options: ["3", "9", "21", "26"],            correct: 3        },        {            question: "Book is to Reading as Fork is to:",            options: ["Drawing", "Writing", "Eating", "Cooking"],            correct: 2        },        {            question: "If APPLE = 50, ORANGE = 60, then MANGO = ?",            options: ["45", "50", "55", "60"],            correct: 1        },        {            question: "Which comes next: Z, Y, X, W, ?",            options: ["V", "U", "T", "S"],            correct: 0        },        {            question: "Day is to Night as Summer is to:",            options: ["Rain", "Winter", "Cold", "Hot"],            correct: 1        },        {            question: "If all A are B, and some B are C, then:",            options: ["All A are C", "Some A are C", "No A are C", "Cannot determine"],            correct: 3        },        {            question: "Find the pattern: AB, CD, EF, GH, ?",            options: ["IJ", "IK", "JK", "HI"],            correct: 0        },        {            question: "Which is heavier: A ton of bricks or a ton of feathers?",            options: ["Bricks", "Feathers", "Both equal", "Depends on volume"],            correct: 2        },        {            question: "Complete: 100, 95, 90, 85, ?",            options: ["75", "80", "82", "78"],            correct: 1        }    ],    arithmetic: [        {            question: "What is 15 + 27?",            options: ["40", "41", "42", "43"],            correct: 2        },        {            question: "What is 144 ÷ 12?",            options: ["10", "11", "12", "13"],            correct: 2        },        {            question: "What is 8 × 9?",            options: ["63", "72", "81", "64"],            correct: 1        },        {            question: "What is 100 - 37?",            options: ["63", "62", "64", "73"],            correct: 0        },        {            question: "What is 25% of 200?",            options: ["25", "50", "75", "100"],            correct: 1        },        {            question: "What is 13² (13 squared)?",            options: ["169", "139", "196", "149"],            correct: 0        },        {            question: "What is the average of 10, 20, 30?",            options: ["15", "20", "25", "30"],            correct: 1        },        {            question: "If a shirt costs $40 and is on 20% discount, what is the sale price?",            options: ["$30", "$32", "$35", "$38"],            correct: 1        },        {            question: "What is 7 × 8 + 4?",            options: ["58", "60", "62", "64"],            correct: 1        },        {            question: "What is 3/4 of 100?",            options: ["70", "75", "80", "85"],            correct: 1        },        {            question: "What is 15 × 15?",            options: ["215", "225", "235", "245"],            correct: 1        },        {            question: "What is 500 ÷ 25?",            options: ["15", "20", "25", "30"],            correct: 1        },        {            question: "What is 48 + 52?",            options: ["90", "95", "100", "105"],            correct: 2        },        {            question: "If 5 apples cost $10, how much do 8 apples cost?",            options: ["$14", "$15", "$16", "$18"],            correct: 2        },        {            question: "What is 20% of 50?",            options: ["5", "10", "15", "20"],            correct: 1        },        {            question: "What is 9 × 9?",            options: ["72", "81", "90", "99"],            correct: 1        },        {            question: "What is 1000 - 675?",            options: ["315", "325", "335", "345"],            correct: 1        },        {            question: "What is the next prime number after 7?",            options: ["9", "10", "11", "13"],            correct: 2        },        {            question: "If a train travels 60 km in 1 hour, how far does it travel in 2.5 hours?",            options: ["120 km", "130 km", "140 km", "150 km"],            correct: 3        },        {            question: "What is 12 × 11?",            options: ["121", "132", "142", "152"],            correct: 1        }    ]};// Application Statelet currentSection = 'reasoning';let currentQuestionIndex = 0;let userAnswers = [];let startTime = 0;let timerInterval = null;let questionTimerInterval = null;let questionTimeLeft = 60;const TIME_PER_QUESTION = 60;// Initialize all questions arraylet allQuestions = [];// DOM Elements
+// Questions Database
+const questions = {
+    reasoning: [
+        {
+            question: "If all roses are flowers and some flowers fade quickly, can we conclude that some roses fade quickly?",
+            options: ["Yes, definitely", "No, cannot conclude", "Only in summer", "Sometimes"],
+            correct: 1
+        },
+        {
+            question: "Find the odd one out: Dog, Cat, Lion, Table",
+            options: ["Dog", "Cat", "Lion", "Table"],
+            correct: 3
+        },
+        {
+            question: "Complete the series: 2, 4, 8, 16, ?",
+            options: ["20", "24", "32", "64"],
+            correct: 2
+        },
+        {
+            question: "If A is taller than B, and B is taller than C, then:",
+            options: ["C is tallest", "A is shortest", "A is taller than C", "Cannot determine"],
+            correct: 2
+        },
+        {
+            question: "Which word does not belong: Apple, Banana, Carrot, Orange",
+            options: ["Apple", "Banana", "Carrot", "Orange"],
+            correct: 2
+        },
+        {
+            question: "If TODAY is coded as UPCBZ, how is WORLD coded?",
+            options: ["XPSME", "XPSNF", "YQTME", "XQSME"],
+            correct: 0
+        },
+        {
+            question: "Find the next number: 1, 1, 2, 3, 5, 8, ?",
+            options: ["11", "12", "13", "14"],
+            correct: 2
+        },
+        {
+            question: "All birds have wings. Sparrow is a bird. Therefore:",
+            options: ["Sparrow cannot fly", "Sparrow has wings", "Wings have sparrows", "Birds are sparrows"],
+            correct: 1
+        },
+        {
+            question: "Which is different: Square, Rectangle, Circle, Triangle",
+            options: ["Square", "Rectangle", "Circle", "Triangle"],
+            correct: 2
+        },
+        {
+            question: "Complete: ACE, BDF, CEG, ?",
+            options: ["DFH", "DEF", "EFG", "DGH"],
+            correct: 0
+        },
+        {
+            question: "If 5 is to 25, then 7 is to:",
+            options: ["35", "42", "49", "56"],
+            correct: 2
+        },
+        {
+            question: "Find the odd one: 3, 9, 15, 21, 26",
+            options: ["3", "9", "21", "26"],
+            correct: 3
+        },
+        {
+            question: "Book is to Reading as Fork is to:",
+            options: ["Drawing", "Writing", "Eating", "Cooking"],
+            correct: 2
+        },
+        {
+            question: "If APPLE = 50, ORANGE = 60, then MANGO = ?",
+            options: ["45", "50", "55", "60"],
+            correct: 1
+        },
+        {
+            question: "Which comes next: Z, Y, X, W, ?",
+            options: ["V", "U", "T", "S"],
+            correct: 0
+        },
+        {
+            question: "Day is to Night as Summer is to:",
+            options: ["Rain", "Winter", "Cold", "Hot"],
+            correct: 1
+        },
+        {
+            question: "If all A are B, and some B are C, then:",
+            options: ["All A are C", "Some A are C", "No A are C", "Cannot determine"],
+            correct: 3
+        },
+        {
+            question: "Find the pattern: AB, CD, EF, GH, ?",
+            options: ["IJ", "IK", "JK", "HI"],
+            correct: 0
+        },
+        {
+            question: "Which is heavier: A ton of bricks or a ton of feathers?",
+            options: ["Bricks", "Feathers", "Both equal", "Depends on volume"],
+            correct: 2
+        },
+        {
+            question: "Complete: 100, 95, 90, 85, ?",
+            options: ["75", "80", "82", "78"],
+            correct: 1
+        }
+    ],
+    arithmetic: [
+        {
+            question: "What is 15 + 27?",
+            options: ["40", "41", "42", "43"],
+            correct: 2
+        },
+        {
+            question: "What is 144 ÷ 12?",
+            options: ["10", "11", "12", "13"],
+            correct: 2
+        },
+        {
+            question: "What is 8 × 9?",
+            options: ["63", "72", "81", "64"],
+            correct: 1
+        },
+        {
+            question: "What is 100 - 37?",
+            options: ["63", "62", "64", "73"],
+            correct: 0
+        },
+        {
+            question: "What is 25% of 200?",
+            options: ["25", "50", "75", "100"],
+            correct: 1
+        },
+        {
+            question: "What is 13² (13 squared)?",
+            options: ["169", "139", "196", "149"],
+            correct: 0
+        },
+        {
+            question: "What is the average of 10, 20, 30?",
+            options: ["15", "20", "25", "30"],
+            correct: 1
+        },
+        {
+            question: "If a shirt costs $40 and is on 20% discount, what is the sale price?",
+            options: ["$30", "$32", "$35", "$38"],
+            correct: 1
+        },
+        {
+            question: "What is 7 × 8 + 4?",
+            options: ["58", "60", "62", "64"],
+            correct: 1
+        },
+        {
+            question: "What is 3/4 of 100?",
+            options: ["70", "75", "80", "85"],
+            correct: 1
+        },
+        {
+            question: "What is 15 × 15?",
+            options: ["215", "225", "235", "245"],
+            correct: 1
+        },
+        {
+            question: "What is 500 ÷ 25?",
+            options: ["15", "20", "25", "30"],
+            correct: 1
+        },
+        {
+            question: "What is 48 + 52?",
+            options: ["90", "95", "100", "105"],
+            correct: 2
+        },
+        {
+            question: "If 5 apples cost $10, how much do 8 apples cost?",
+            options: ["$14", "$15", "$16", "$18"],
+            correct: 2
+        },
+        {
+            question: "What is 20% of 50?",
+            options: ["5", "10", "15", "20"],
+            correct: 1
+        },
+        {
+            question: "What is 9 × 9?",
+            options: ["72", "81", "90", "99"],
+            correct: 1
+        },
+        {
+            question: "What is 1000 - 675?",
+            options: ["315", "325", "335", "345"],
+            correct: 1
+        },
+        {
+            question: "What is the next prime number after 7?",
+            options: ["9", "10", "11", "13"],
+            correct: 2
+        },
+        {
+            question: "If a train travels 60 km in 1 hour, how far does it travel in 2.5 hours?",
+            options: ["120 km", "130 km", "140 km", "150 km"],
+            correct: 3
+        },
+        {
+            question: "What is 12 × 11?",
+            options: ["121", "132", "142", "152"],
+            correct: 1
+        }
+    ]
+};
+
+// Application State
+let currentSection = 'reasoning';
+let currentQuestionIndex = 0;
+let userAnswers = [];
+let startTime = 0;
+let timerInterval = null;
+let questionTimerInterval = null;
+let questionTimeLeft = 60;
+const TIME_PER_QUESTION = 60;
+
+// Initialize all questions array
+let allQuestions = [];
+
+// DOM Elements
 let startScreen, examScreen, resultScreen, quitScreen;
 let startBtn, prevBtn, nextBtn, submitBtn, quitBtn, restartBtn, tryAgainBtn;
 
@@ -17,13 +238,13 @@ function initDOMElements() {
     tryAgainBtn = document.getElementById('try-again-btn');
     
     // Event Listeners
-    startBtn.addEventListener('click', startExam);
-    prevBtn.addEventListener('click', previousQuestion);
-    nextBtn.addEventListener('click', nextQuestion);
-    submitBtn.addEventListener('click', submitExam);
-    quitBtn.addEventListener('click', quitExam);
-    restartBtn.addEventListener('click', restartExam);
-    tryAgainBtn.addEventListener('click', restartExam);
+    if (startBtn) startBtn.addEventListener('click', startExam);
+    if (prevBtn) prevBtn.addEventListener('click', previousQuestion);
+    if (nextBtn) nextBtn.addEventListener('click', nextQuestion);
+    if (submitBtn) submitBtn.addEventListener('click', submitExam);
+    if (quitBtn) quitBtn.addEventListener('click', quitExam);
+    if (restartBtn) restartBtn.addEventListener('click', restartExam);
+    if (tryAgainBtn) tryAgainBtn.addEventListener('click', restartExam);
 }
 
 // Initialize
@@ -33,4 +254,203 @@ function init() {
         ...questions.arithmetic.map(q => ({...q, section: 'Arithmetic'}))
     ];
     userAnswers = new Array(allQuestions.length).fill(null);
-}function startExam() {    init();    startScreen.classList.remove('active');    examScreen.classList.add('active');    startTime = Date.now();    startTimer();    startQuestionTimer();    displayQuestion();}function startTimer() {    timerInterval = setInterval(() => {        const elapsed = Date.now() - startTime;        const minutes = Math.floor(elapsed / 60000);        const seconds = Math.floor((elapsed % 60000) / 1000);        document.getElementById('timer').textContent =             `Total Time: ${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;    }, 1000);}function startQuestionTimer() {    questionTimeLeft = TIME_PER_QUESTION;    updateQuestionTimerDisplay();        if (questionTimerInterval) {        clearInterval(questionTimerInterval);    }        questionTimerInterval = setInterval(() => {        questionTimeLeft--;        updateQuestionTimerDisplay();                if (questionTimeLeft <= 0) {            clearInterval(questionTimerInterval);            if (currentQuestionIndex < allQuestions.length - 1) {                nextQuestion();            } else {                submitExam();            }        }    }, 1000);}function updateQuestionTimerDisplay() {    const timerElement = document.getElementById('question-timer');    timerElement.textContent = `Question Time: ${questionTimeLeft}s`;        if (questionTimeLeft <= 10) {        timerElement.style.color = '#dc3545';        timerElement.style.fontWeight = 'bold';    } else if (questionTimeLeft <= 20) {        timerElement.style.color = '#ffc107';    } else {        timerElement.style.color = '#28a745';    }}function displayQuestion() {    const question = allQuestions[currentQuestionIndex];        startQuestionTimer();        document.getElementById('section-name').textContent = question.section;    document.getElementById('question-counter').textContent =         `Question ${currentQuestionIndex + 1} of ${allQuestions.length}`;    document.getElementById('question-text').textContent = question.question;        question.options.forEach((option, index) => {        document.getElementById(`option-${index}`).textContent = option;    });        const radioButtons = document.querySelectorAll('input[name="answer"]');    radioButtons.forEach(radio => {        radio.checked = false;    });        if (userAnswers[currentQuestionIndex] !== null) {        radioButtons[userAnswers[currentQuestionIndex]].checked = true;    }        prevBtn.style.display = currentQuestionIndex === 0 ? 'none' : 'block';    nextBtn.style.display = currentQuestionIndex === allQuestions.length - 1 ? 'none' : 'block';    submitBtn.style.display = currentQuestionIndex === allQuestions.length - 1 ? 'block' : 'none';}function saveAnswer() {    const selectedOption = document.querySelector('input[name="answer"]:checked');    if (selectedOption) {        userAnswers[currentQuestionIndex] = parseInt(selectedOption.value);    }}function previousQuestion() {    saveAnswer();    if (currentQuestionIndex > 0) {        currentQuestionIndex--;        displayQuestion();    }}function nextQuestion() {    saveAnswer();    if (currentQuestionIndex < allQuestions.length - 1) {        currentQuestionIndex++;        displayQuestion();    }}function submitExam() {    if (confirm('Are you sure you want to submit the exam?')) {        saveAnswer();        clearInterval(timerInterval);        clearInterval(questionTimerInterval);        calculateResults();        showResults();    }}function quitExam() {    if (confirm('Are you sure you want to quit the exam? Your progress will not be saved.')) {        saveAnswer();        clearInterval(timerInterval);        clearInterval(questionTimerInterval);        showQuitScreen();    }}function showQuitScreen() {    const attempted = userAnswers.filter(answer => answer !== null).length;    const elapsed = Date.now() - startTime;    const minutes = Math.floor(elapsed / 60000);    const seconds = Math.floor((elapsed % 60000) / 1000);    const timeSpent = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;        document.getElementById('quit-attempted').textContent = attempted;    document.getElementById('quit-time').textContent = timeSpent;        examScreen.classList.remove('active');    quitScreen.classList.add('active');}function calculateResults() {    let totalCorrect = 0;    let reasoningCorrect = 0;    let arithmeticCorrect = 0;    let wrongAnswers = 0;    let unanswered = 0;        allQuestions.forEach((question, index) => {        const userAnswer = userAnswers[index];                if (userAnswer === null) {            unanswered++;        } else if (userAnswer === question.correct) {            totalCorrect++;            if (question.section === 'Reasoning') {                reasoningCorrect++;            } else {                arithmeticCorrect++;            }        } else {            wrongAnswers++;        }    });        const percentage = Math.round((totalCorrect / allQuestions.length) * 100);        document.getElementById('percentage').textContent = `${percentage}%`;    document.getElementById('correct-answers').textContent = totalCorrect;    document.getElementById('wrong-answers').textContent = wrongAnswers;    document.getElementById('unanswered').textContent = unanswered;    document.getElementById('reasoning-score').textContent = reasoningCorrect;    document.getElementById('arithmetic-score').textContent = arithmeticCorrect;}function showResults() {    examScreen.classList.remove('active');    resultScreen.classList.add('active');}function restartExam() {    currentQuestionIndex = 0;    clearInterval(questionTimerInterval);    resultScreen.classList.remove('active');    quitScreen.classList.remove('active');    startScreen.classList.add('active');    document.getElementById('timer').textContent = 'Total Time: 00:00';    document.getElementById('question-timer').textContent = 'Question Time: 60s';}// Initialize on page loadwindow.addEventListener('DOMContentLoaded', () => {    initDOMElements();    init();});
+}
+
+function startExam() {
+    init();
+    startScreen.classList.remove('active');
+    examScreen.classList.add('active');
+    startTime = Date.now();
+    startTimer();
+    startQuestionTimer();
+    displayQuestion();
+}
+
+function startTimer() {
+    timerInterval = setInterval(() => {
+        const elapsed = Date.now() - startTime;
+        const minutes = Math.floor(elapsed / 60000);
+        const seconds = Math.floor((elapsed % 60000) / 1000);
+        document.getElementById('timer').textContent = 
+            `Total Time: ${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+    }, 1000);
+}
+
+function startQuestionTimer() {
+    questionTimeLeft = TIME_PER_QUESTION;
+    updateQuestionTimerDisplay();
+    
+    if (questionTimerInterval) {
+        clearInterval(questionTimerInterval);
+    }
+    
+    questionTimerInterval = setInterval(() => {
+        questionTimeLeft--;
+        updateQuestionTimerDisplay();
+        
+        if (questionTimeLeft <= 0) {
+            clearInterval(questionTimerInterval);
+            if (currentQuestionIndex < allQuestions.length - 1) {
+                nextQuestion();
+            } else {
+                submitExam();
+            }
+        }
+    }, 1000);
+}
+
+function updateQuestionTimerDisplay() {
+    const timerElement = document.getElementById('question-timer');
+    timerElement.textContent = `Question Time: ${questionTimeLeft}s`;
+    
+    if (questionTimeLeft <= 10) {
+        timerElement.style.color = '#dc3545';
+        timerElement.style.fontWeight = 'bold';
+    } else if (questionTimeLeft <= 20) {
+        timerElement.style.color = '#ffc107';
+    } else {
+        timerElement.style.color = '#28a745';
+    }
+}
+
+function displayQuestion() {
+    const question = allQuestions[currentQuestionIndex];
+    
+    startQuestionTimer();
+    
+    document.getElementById('section-name').textContent = question.section;
+    document.getElementById('question-counter').textContent = 
+        `Question ${currentQuestionIndex + 1} of ${allQuestions.length}`;
+    document.getElementById('question-text').textContent = question.question;
+    
+    question.options.forEach((option, index) => {
+        document.getElementById(`option-${index}`).textContent = option;
+    });
+    
+    const radioButtons = document.querySelectorAll('input[name="answer"]');
+    radioButtons.forEach(radio => {
+        radio.checked = false;
+    });
+    
+    if (userAnswers[currentQuestionIndex] !== null) {
+        radioButtons[userAnswers[currentQuestionIndex]].checked = true;
+    }
+    
+    prevBtn.style.display = currentQuestionIndex === 0 ? 'none' : 'block';
+    nextBtn.style.display = currentQuestionIndex === allQuestions.length - 1 ? 'none' : 'block';
+    submitBtn.style.display = currentQuestionIndex === allQuestions.length - 1 ? 'block' : 'none';
+}
+
+function saveAnswer() {
+    const selectedOption = document.querySelector('input[name="answer"]:checked');
+    if (selectedOption) {
+        userAnswers[currentQuestionIndex] = parseInt(selectedOption.value);
+    }
+}
+
+function previousQuestion() {
+    saveAnswer();
+    if (currentQuestionIndex > 0) {
+        currentQuestionIndex--;
+        displayQuestion();
+    }
+}
+
+function nextQuestion() {
+    saveAnswer();
+    if (currentQuestionIndex < allQuestions.length - 1) {
+        currentQuestionIndex++;
+        displayQuestion();
+    }
+}
+
+function submitExam() {
+    if (confirm('Are you sure you want to submit the exam?')) {
+        saveAnswer();
+        clearInterval(timerInterval);
+        clearInterval(questionTimerInterval);
+        calculateResults();
+        showResults();
+    }
+}
+
+function quitExam() {
+    if (confirm('Are you sure you want to quit the exam? Your progress will not be saved.')) {
+        saveAnswer();
+        clearInterval(timerInterval);
+        clearInterval(questionTimerInterval);
+        showQuitScreen();
+    }
+}
+
+function showQuitScreen() {
+    const attempted = userAnswers.filter(answer => answer !== null).length;
+    const elapsed = Date.now() - startTime;
+    const minutes = Math.floor(elapsed / 60000);
+    const seconds = Math.floor((elapsed % 60000) / 1000);
+    const timeSpent = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+    
+    document.getElementById('quit-attempted').textContent = attempted;
+    document.getElementById('quit-time').textContent = timeSpent;
+    
+    examScreen.classList.remove('active');
+    quitScreen.classList.add('active');
+}
+
+function calculateResults() {
+    let totalCorrect = 0;
+    let reasoningCorrect = 0;
+    let arithmeticCorrect = 0;
+    let wrongAnswers = 0;
+    let unanswered = 0;
+    
+    allQuestions.forEach((question, index) => {
+        const userAnswer = userAnswers[index];
+        
+        if (userAnswer === null) {
+            unanswered++;
+        } else if (userAnswer === question.correct) {
+            totalCorrect++;
+            if (question.section === 'Reasoning') {
+                reasoningCorrect++;
+            } else {
+                arithmeticCorrect++;
+            }
+        } else {
+            wrongAnswers++;
+        }
+    });
+    
+    const percentage = Math.round((totalCorrect / allQuestions.length) * 100);
+    
+    document.getElementById('percentage').textContent = `${percentage}%`;
+    document.getElementById('correct-answers').textContent = totalCorrect;
+    document.getElementById('wrong-answers').textContent = wrongAnswers;
+    document.getElementById('unanswered').textContent = unanswered;
+    document.getElementById('reasoning-score').textContent = reasoningCorrect;
+    document.getElementById('arithmetic-score').textContent = arithmeticCorrect;
+}
+
+function showResults() {
+    examScreen.classList.remove('active');
+    resultScreen.classList.add('active');
+}
+
+function restartExam() {
+    currentQuestionIndex = 0;
+    clearInterval(timerInterval);
+    clearInterval(questionTimerInterval);
+    resultScreen.classList.remove('active');
+    quitScreen.classList.remove('active');
+    startScreen.classList.add('active');
+    document.getElementById('timer').textContent = 'Total Time: 00:00';
+    document.getElementById('question-timer').textContent = 'Question Time: 60s';
+}
+
+// Initialize on page load
+window.addEventListener('DOMContentLoaded', () => {
+    console.log('DOM Loaded - Initializing app');
+    initDOMElements();
+    init();
+    console.log('App initialized successfully');
+});
