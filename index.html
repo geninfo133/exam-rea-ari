@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="GenInfotech - Software Training Hub Online Examination System">
+    <meta name="theme-color" content="#667eea">
+    <title>GenInfotech - Online Examination</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="icon-192.png">
+</head>
+<body>
+    <div class="container">
+        <div id="start-screen" class="screen active">
+            <div class="welcome-card">
+                <div style="text-align: center;">
+                    <h1 style="color: #667eea; font-size: 48px; margin-bottom: 15px; font-weight: bold;">GenInfotech</h1>
+                    <h3 style="color: #764ba2; margin-bottom: 10px; font-size: 24px;">Software Training Hub</h3>
+                    <h2 style="margin-bottom: 30px; font-size: 28px; color: #333;">Online Examination</h2>
+                </div>
+                
+                <div class="exam-rules">
+                    <h3 style="color: #667eea; margin-bottom: 20px; text-align: center;">Exam Rules & Instructions</h3>
+                    <ul>
+                        <li><strong>Total Questions:</strong> 40 (Reasoning: 20, Arithmetic: 20)</li>
+                        <li><strong>Marking Scheme:</strong> Each correct answer carries 1 mark</li>
+                        <li><strong>Time Limit:</strong> 60 seconds per question (auto-advances when time expires)</li>
+                        <li><strong>Navigation:</strong> You can move between questions using Previous/Next buttons</li>
+                        <li><strong>Answer Selection:</strong> Select one option from the four choices provided</li>
+                        <li><strong>Answer Changes:</strong> You can change your answers before submitting</li>
+                        <li><strong>Submission:</strong> Click "Submit Exam" button after answering all questions</li>
+                        <li><strong>Results:</strong> Your score and detailed breakdown will be shown immediately after submission</li>
+                        <li><strong>Important:</strong> Once submitted, you cannot change your answers</li>
+                    </ul>
+                </div>
+                
+                <div style="text-align: center; margin-top: 30px;">
+                    <button id="start-btn" class="btn btn-primary">I Understand - Start Exam</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="exam-screen" class="screen">
+            <div class="exam-card">
+                <div class="exam-header">
+                    <div class="exam-info">
+                        <span id="timer">Total Time: 00:00</span>
+                        <span id="question-timer" style="color: #dc3545; font-weight: bold;">Question Time: 60s</span>
+                        <span id="question-counter">Question 1 of 40</span>
+                    </div>
+                </div>
+                <div class="section-header">
+                    <span id="section-name" class="badge">Reasoning</span>
+                </div>
+                
+                <div class="question-container">
+                    <h3 id="question-text"></h3>
+                    
+                    <div class="options">
+                        <label class="option">
+                            <input type="radio" name="answer" value="0">
+                            <span class="option-text" id="option-0"></span>
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="answer" value="1">
+                            <span class="option-text" id="option-1"></span>
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="answer" value="2">
+                            <span class="option-text" id="option-2"></span>
+                        </label>
+                        <label class="option">
+                            <input type="radio" name="answer" value="3">
+                            <span class="option-text" id="option-3"></span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="navigation">
+                    <button id="prev-btn" class="btn btn-secondary">Previous</button>
+                    <button id="quit-btn" class="btn btn-danger">Quit Exam</button>
+                    <button id="next-btn" class="btn btn-primary">Next</button>
+                    <button id="submit-btn" class="btn btn-success">Submit Exam</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="quit-screen" class="screen">
+            <div class="quit-card">
+                <div class="quit-icon">😔</div>
+                <h2>Better Luck Next Time!</h2>
+                <p class="quit-message">You have quit the exam. Don't worry, you can always try again when you're ready.</p>
+                <div class="quit-stats">
+                    <div class="quit-stat">
+                        <span class="label">Questions Attempted:</span>
+                        <span class="value" id="quit-attempted">0</span>
+                    </div>
+                    <div class="quit-stat">
+                        <span class="label">Time Spent:</span>
+                        <span class="value" id="quit-time">00:00</span>
+                    </div>
+                </div>
+                <button id="try-again-btn" class="btn btn-primary">Try Again</button>
+            </div>
+        </div>
+
+        <div id="result-screen" class="screen">
+            <div class="result-card">
+                <h2>Exam Results</h2>
+                <div class="score-display">
+                    <div class="score-circle">
+                        <div class="percentage" id="percentage">0%</div>
+                        <div class="score-text">Your Score</div>
+                    </div>
+                </div>
+                
+                <div class="result-details">
+                    <div class="result-item">
+                        <span class="label">Total Questions:</span>
+                        <span class="value" id="total-questions">40</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="label">Correct Answers:</span>
+                        <span class="value correct" id="correct-answers">0</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="label">Wrong Answers:</span>
+                        <span class="value wrong" id="wrong-answers">0</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="label">Unanswered:</span>
+                        <span class="value" id="unanswered">0</span>
+                    </div>
+                </div>
+
+                <div class="section-scores">
+                    <div class="section-score">
+                        <h4>Reasoning</h4>
+                        <p><span id="reasoning-score">0</span> / 20</p>
+                    </div>
+                    <div class="section-score">
+                        <h4>Arithmetic</h4>
+                        <p><span id="arithmetic-score">0</span> / 20</p>
+                    </div>
+                </div>
+
+                <button id="restart-btn" class="btn btn-primary">Take Exam Again</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Register Service Worker
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/service-worker.js')
+                    .then((registration) => {
+                        console.log('ServiceWorker registered:', registration.scope);
+                    })
+                    .catch((error) => {
+                        console.log('ServiceWorker registration failed:', error);
+                    });
+            });
+        }
+    </script>
+</body>
+</html>
