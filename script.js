@@ -2,205 +2,205 @@
 const questions = {
     reasoning: [
         {
-            question: "If all roses are flowers and some flowers fade quickly, can we conclude that some roses fade quickly?",
-            options: ["Yes, definitely", "No, cannot conclude", "Only in summer", "Sometimes"],
-            correct: 1
-        },
-        {
-            question: "Find the odd one out: Dog, Cat, Lion, Table",
-            options: ["Dog", "Cat", "Lion", "Table"],
+            question: "If all A are B, all B are C, and some C are D, which statement must be true?",
+            options: ["All A are D", "Some A are D", "All D are A", "None of these must be true"],
             correct: 3
         },
         {
-            question: "Complete the series: 2, 4, 8, 16, ?",
-            options: ["20", "24", "32", "64"],
-            correct: 2
-        },
-        {
-            question: "If A is taller than B, and B is taller than C, then:",
-            options: ["C is tallest", "A is shortest", "A is taller than C", "Cannot determine"],
-            correct: 2
-        },
-        {
-            question: "Which word does not belong: Apple, Banana, Carrot, Orange",
-            options: ["Apple", "Banana", "Carrot", "Orange"],
-            correct: 2
-        },
-        {
-            question: "If TODAY is coded as UPCBZ, how is WORLD coded?",
-            options: ["XPSME", "XPSNF", "YQTME", "XQSME"],
-            correct: 0
-        },
-        {
-            question: "Find the next number: 1, 1, 2, 3, 5, 8, ?",
-            options: ["11", "12", "13", "14"],
-            correct: 2
-        },
-        {
-            question: "All birds have wings. Sparrow is a bird. Therefore:",
-            options: ["Sparrow cannot fly", "Sparrow has wings", "Wings have sparrows", "Birds are sparrows"],
+            question: "In a certain code, GREAT is written as 97512. What would TIGER be written as?",
+            options: ["28597", "52897", "58927", "29857"],
             correct: 1
         },
         {
-            question: "Which is different: Square, Rectangle, Circle, Triangle",
-            options: ["Square", "Rectangle", "Circle", "Triangle"],
-            correct: 2
-        },
-        {
-            question: "Complete: ACE, BDF, CEG, ?",
-            options: ["DFH", "DEF", "EFG", "DGH"],
+            question: "If the day before yesterday was Thursday, what day will be the day after tomorrow?",
+            options: ["Monday", "Tuesday", "Wednesday", "Sunday"],
             correct: 0
         },
         {
-            question: "If 5 is to 25, then 7 is to:",
-            options: ["35", "42", "49", "56"],
-            correct: 2
+            question: "A clock shows 3:15. What is the angle between the hour and minute hands?",
+            options: ["0°", "7.5°", "15°", "22.5°"],
+            correct: 1
         },
         {
-            question: "Find the odd one: 3, 9, 15, 21, 26",
-            options: ["3", "9", "21", "26"],
+            question: "If PAINT is coded as 74128 and EXCEL is coded as 93596, how is ACCEPT coded?",
+            options: ["455978", "466978", "755948", "Cannot determine"],
             correct: 3
         },
         {
-            question: "Book is to Reading as Fork is to:",
-            options: ["Drawing", "Writing", "Eating", "Cooking"],
-            correct: 2
-        },
-        {
-            question: "If APPLE = 50, ORANGE = 60, then MANGO = ?",
-            options: ["45", "50", "55", "60"],
+            question: "Five friends are sitting in a row. A is to the left of B but right of C. D is to the right of B but left of E. Who is in the middle?",
+            options: ["A", "B", "C", "D"],
             correct: 1
         },
         {
-            question: "Which comes next: Z, Y, X, W, ?",
-            options: ["V", "U", "T", "S"],
-            correct: 0
-        },
-        {
-            question: "Day is to Night as Summer is to:",
-            options: ["Rain", "Winter", "Cold", "Hot"],
+            question: "Find the next number: 2, 6, 12, 20, 30, ?",
+            options: ["40", "42", "44", "46"],
             correct: 1
         },
         {
-            question: "If all A are B, and some B are C, then:",
-            options: ["All A are C", "Some A are C", "No A are C", "Cannot determine"],
+            question: "If some Zips are Zaps, and all Zaps are Zops, which conclusion is valid?",
+            options: ["All Zips are Zops", "Some Zips are Zops", "No Zips are Zops", "Cannot determine"],
             correct: 3
         },
         {
-            question: "Find the pattern: AB, CD, EF, GH, ?",
-            options: ["IJ", "IK", "JK", "HI"],
+            question: "A father is 3 times as old as his son. In 15 years, he will be twice as old. How old is the son now?",
+            options: ["10", "15", "20", "25"],
+            correct: 1
+        },
+        {
+            question: "What comes next in the sequence: J, F, M, A, M, J, ?",
+            options: ["J", "A", "S", "O"],
             correct: 0
         },
         {
-            question: "Which is heavier: A ton of bricks or a ton of feathers?",
-            options: ["Bricks", "Feathers", "Both equal", "Depends on volume"],
+            question: "Find the missing number: 3, 7, 15, 31, 63, ?",
+            options: ["127", "125", "128", "126"],
+            correct: 0
+        },
+        {
+            question: "Which number does NOT belong: 2, 5, 10, 17, 26, 37, 49",
+            options: ["10", "17", "26", "49"],
+            correct: 3
+        },
+        {
+            question: "If LOGIC = 12, BRAIN = 10, what is THINK?",
+            options: ["10", "11", "12", "13"],
+            correct: 0
+        },
+        {
+            question: "A is B's sister. C is B's mother. D is C's father. E is D's mother. How is A related to D?",
+            options: ["Grandmother", "Granddaughter", "Daughter", "Great-granddaughter"],
+            correct: 3
+        },
+        {
+            question: "Complete: AZ, BY, CX, DW, ?",
+            options: ["EV", "EW", "FV", "FW"],
+            correct: 0
+        },
+        {
+            question: "In a family of 6, M is the son of Q, but Q is not the mother of M. E is the daughter of Q. F is the spouse of Q. G is the brother of M. H is the son of F. How many children does Q have?",
+            options: ["2", "3", "4", "Cannot determine"],
+            correct: 1
+        },
+        {
+            question: "If 'PEN' is coded as 35 and 'PENCIL' is coded as 62, what is 'PAPER' coded as?",
+            options: ["50", "52", "54", "56"],
+            correct: 1
+        },
+        {
+            question: "Find the wrong number: 7, 14, 21, 35, 49, 63",
+            options: ["14", "21", "35", "49"],
             correct: 2
         },
         {
-            question: "Complete: 100, 95, 90, 85, ?",
-            options: ["75", "80", "82", "78"],
+            question: "If North becomes South-West, South becomes ?, East becomes North-West, what does West become?",
+            options: ["North-East", "South-East", "North", "South"],
             correct: 1
+        },
+        {
+            question: "Complete the series: 1, 4, 9, 16, 25, 36, ?, 64",
+            options: ["42", "45", "49", "52"],
+            correct: 2
         }
     ],
     arithmetic: [
         {
-            question: "What is 15 + 27?",
-            options: ["40", "41", "42", "43"],
-            correct: 2
-        },
-        {
-            question: "What is 144 ÷ 12?",
-            options: ["10", "11", "12", "13"],
-            correct: 2
-        },
-        {
-            question: "What is 8 × 9?",
-            options: ["63", "72", "81", "64"],
-            correct: 1
-        },
-        {
-            question: "What is 100 - 37?",
-            options: ["63", "62", "64", "73"],
+            question: "What is 127 × 8?",
+            options: ["1016", "1024", "1032", "1008"],
             correct: 0
         },
         {
-            question: "What is 25% of 200?",
-            options: ["25", "50", "75", "100"],
+            question: "What is 2304 ÷ 48?",
+            options: ["46", "48", "50", "52"],
             correct: 1
         },
         {
-            question: "What is 13² (13 squared)?",
-            options: ["169", "139", "196", "149"],
+            question: "What is 17² - 13²?",
+            options: ["100", "110", "120", "130"],
+            correct: 2
+        },
+        {
+            question: "What is 456 + 789 - 234?",
+            options: ["1001", "1011", "1021", "1031"],
+            correct: 1
+        },
+        {
+            question: "What is 35% of 840?",
+            options: ["284", "294", "304", "314"],
+            correct: 1
+        },
+        {
+            question: "What is the cube root of 3375?",
+            options: ["13", "15", "17", "19"],
+            correct: 1
+        },
+        {
+            question: "What is the average of 23, 47, 56, 82, 91?",
+            options: ["58.8", "59.0", "59.8", "60.2"],
+            correct: 2
+        },
+        {
+            question: "A product costs $1250. After a 15% increase and then 12% discount, what is the final price?",
+            options: ["$1265", "$1276", "$1287", "$1298"],
+            correct: 1
+        },
+        {
+            question: "What is (23 × 16) - (18 × 19)?",
+            options: ["26", "28", "30", "32"],
             correct: 0
         },
         {
-            question: "What is the average of 10, 20, 30?",
-            options: ["15", "20", "25", "30"],
+            question: "What is 7/12 + 5/16?",
+            options: ["99/96", "109/96", "119/96", "129/96"],
             correct: 1
         },
         {
-            question: "If a shirt costs $40 and is on 20% discount, what is the sale price?",
-            options: ["$30", "$32", "$35", "$38"],
+            question: "What is 23 × 47?",
+            options: ["1071", "1081", "1091", "1101"],
             correct: 1
         },
         {
-            question: "What is 7 × 8 + 4?",
-            options: ["58", "60", "62", "64"],
+            question: "What is 1728 ÷ 64?",
+            options: ["25", "27", "29", "31"],
             correct: 1
         },
         {
-            question: "What is 3/4 of 100?",
-            options: ["70", "75", "80", "85"],
+            question: "What is 237 + 468 + 192?",
+            options: ["887", "897", "907", "917"],
             correct: 1
         },
         {
-            question: "What is 15 × 15?",
-            options: ["215", "225", "235", "245"],
-            correct: 1
+            question: "If 12 items cost $156, how much do 17 items cost?",
+            options: ["$221", "$224", "$227", "$230"],
+            correct: 0
         },
         {
-            question: "What is 500 ÷ 25?",
-            options: ["15", "20", "25", "30"],
-            correct: 1
-        },
-        {
-            question: "What is 48 + 52?",
-            options: ["90", "95", "100", "105"],
+            question: "What is 45% of 680?",
+            options: ["296", "302", "306", "312"],
             correct: 2
         },
         {
-            question: "If 5 apples cost $10, how much do 8 apples cost?",
-            options: ["$14", "$15", "$16", "$18"],
-            correct: 2
-        },
-        {
-            question: "What is 20% of 50?",
-            options: ["5", "10", "15", "20"],
+            question: "What is 19 × 23?",
+            options: ["427", "437", "447", "457"],
             correct: 1
         },
         {
-            question: "What is 9 × 9?",
-            options: ["72", "81", "90", "99"],
+            question: "What is 3456 - 1789?",
+            options: ["1657", "1667", "1677", "1687"],
             correct: 1
         },
         {
-            question: "What is 1000 - 675?",
-            options: ["315", "325", "335", "345"],
+            question: "What is the sum of all prime numbers between 20 and 30?",
+            options: ["99", "101", "103", "105"],
+            correct: 0
+        },
+        {
+            question: "A train travels 180 km at 60 km/h, then 240 km at 80 km/h. What is the average speed?",
+            options: ["68 km/h", "70 km/h", "72 km/h", "74 km/h"],
             correct: 1
         },
         {
-            question: "What is the next prime number after 7?",
-            options: ["9", "10", "11", "13"],
-            correct: 2
-        },
-        {
-            question: "If a train travels 60 km in 1 hour, how far does it travel in 2.5 hours?",
-            options: ["120 km", "130 km", "140 km", "150 km"],
-            correct: 3
-        },
-        {
-            question: "What is 12 × 11?",
-            options: ["121", "132", "142", "152"],
+            question: "What is (15² + 12²) ÷ 3?",
+            options: ["117", "123", "129", "135"],
             correct: 1
         }
     ]
@@ -213,8 +213,8 @@ let userAnswers = [];
 let startTime = 0;
 let timerInterval = null;
 let questionTimerInterval = null;
-let questionTimeLeft = 60;
-const TIME_PER_QUESTION = 60;
+let questionTimeLeft = 30;
+const TIME_PER_QUESTION = 30;
 
 // Initialize all questions array
 let allQuestions = [];
@@ -444,7 +444,7 @@ function restartExam() {
     quitScreen.classList.remove('active');
     startScreen.classList.add('active');
     document.getElementById('timer').textContent = 'Total Time: 00:00';
-    document.getElementById('question-timer').textContent = 'Question Time: 60s';
+    document.getElementById('question-timer').textContent = 'Question Time: 30s';
 }
 
 // Initialize on page load
